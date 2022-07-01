@@ -46,3 +46,4 @@ bspc config window_gap 10
 
 ###---Rules---###
 bspc rule -a mpv state=fullscreen
+bspc rule -a zoom state=floating center=on follow=on border=off
