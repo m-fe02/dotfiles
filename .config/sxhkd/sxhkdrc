@@ -10,6 +10,10 @@ super + Return
 super + d
 	dmenu_run
 
+# Archlinux-Logout
+super + x
+    archlinux-logout
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -17,7 +21,13 @@ super + Escape
 # bspwm hotkeys
 super + b
 	chromium
+super + shift + b
+    firefox
 
+# FlameShot Hotkey
+ctrl + shift + s
+    flameshot gui
+    
 # quit/restart bspwm
 super + shift + {q,r}
 	bspc {quit,wm -r}
