@@ -20,8 +20,6 @@ super + Escape
 
 # bspwm hotkeys
 super + b
-	chromium
-super + shift + b
     firefox
 
 # FlameShot Hotkey
