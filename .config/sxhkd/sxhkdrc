@@ -6,9 +6,11 @@
 super + Return
 	alacritty
 
-# program launcher
+# Rofi
 super + d
-	dmenu_run
+	rofi -show run
+super + w
+    rofi -show window
 
 # Archlinux-Logout
 super + x
