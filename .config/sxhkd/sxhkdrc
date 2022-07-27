@@ -8,25 +8,20 @@ super + Return
 
 # Rofi
 super + d
-	rofi -show run
-super + w
-    rofi -show window
+	rofi -terminal alacritty -show run
 
-# Archlinux-Logout
-super + x
-    archlinux-logout
+# Suspend
+super + shift + x
+    systemctl suspend
 
 # make sxhkd reload its configuration files:
 super + Escape
+    ~/.config/polybar/launch.sh
 	pkill -USR1 -x sxhkd
 
 # bspwm hotkeys
 super + b
     firefox
-
-# FlameShot Hotkey
-ctrl + shift + s
-    flameshot gui
     
 # quit/restart bspwm
 super + shift + {q,r}
