@@ -14,6 +14,17 @@ super + d
 super + shift + x
     systemctl suspend
 
+# Screenshot
+Print
+    flameshot full -p ~/Pictures/Screenshots
+
+shift + Print
+    flameshot gui -p ~/Pictures/Screenshots
+
+# Picom-Toggle
+super + shift + p
+    ~/.config/picom/picom-toggle.sh
+
 # make sxhkd reload its configuration files:
 super + Escape
     ~/.config/polybar/launch.sh
