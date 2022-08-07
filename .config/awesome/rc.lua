@@ -45,7 +45,10 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
+
+-- Use correct status icon size
+awesome.set_preferred_icon_size(32)
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -193,7 +196,6 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            mylauncher,
             s.mytaglist,
             s.mypromptbox,
         },
@@ -332,7 +334,7 @@ clientkeys = gears.table.join(
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
+    awful.key({ modkey, "Control"   }, "q",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
@@ -449,7 +451,6 @@ awful.rules.rules = {
                      keys = clientkeys,
                      buttons = clientbuttons,
                      screen = awful.screen.preferred,
-                     placement = awful.placement.no_overlap+awful.placement.no_offscreen
      }
     },
 
@@ -561,19 +562,11 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Enable gaps
 beautiful.useless_gap = 3
-beautiful.gap_single_client = true
-
--- Rounded Corners
-client.connect_signal("manage", function(c)
-    c.shape = function(cr, w, h)
-        gears.shape.rounded_rect(cr, w, h, 10)
-    end
-end)
+beautiful.gap_single_client = false
 
 -- Autostart Applications
 awful.spawn "picom -b --experimental-backends"
 awful.spawn "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 awful.spawn "xfce4-power-manager"
 awful.spawn "nm-applet"
-awful.spawn "pasystray"
 awful.spawn.with_shell("feh --bg-fill $HOME/wallpaper/treesunset.png")
