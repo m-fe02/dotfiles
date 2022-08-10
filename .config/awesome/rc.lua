@@ -48,7 +48,7 @@ end
 beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 
 -- Use correct status icon size
-awesome.set_preferred_icon_size(32)
+awesome.set_preferred_icon_size(10)
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -162,7 +162,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    awful.tag({ "➊", "➋", "➌", "➍", "➎", "➏", "➐", "➑", "➒" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -202,7 +202,6 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,
@@ -307,10 +306,10 @@ globalkeys = gears.table.join(
         awful.util.spawn("rofi -show run") end, 
               {description = "rofi", group = "launcher"}),
 
-    -- Firefox
+    -- Browser
     awful.key({ modkey },            "b",     function ()
-        awful.util.spawn("firefox") end, 
-              {description = "Firefox", group = "Browser"}),
+        awful.util.spawn("brave") end, 
+              {description = "brave", group = "Browser"}),
 
     awful.key({ modkey }, "x",
               function ()
@@ -334,7 +333,7 @@ clientkeys = gears.table.join(
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
-    awful.key({ modkey, "Control"   }, "q",      function (c) c:kill()                         end,
+    awful.key({ "Control"   }, "q",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
@@ -462,16 +461,12 @@ awful.rules.rules = {
           "pinentry",
         },
         class = {
+	  "zoom",
           "Arandr",
           "Blueman-manager",
-          "Gpick",
-          "Kruler",
           "MessageWin",  -- kalarm.
           "Sxiv",
-          "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
-          "Wpa_gui",
-          "veromix",
-          "xtightvncviewer"},
+          "Tor Browser"}, -- Needs a fixed window size to avoid fingerprinting by screen size.
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
         -- and the name shown there might not match defined rules here.
@@ -562,11 +557,12 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Enable gaps
 beautiful.useless_gap = 3
-beautiful.gap_single_client = false
+beautiful.gap_single_client = true
 
 -- Autostart Applications
 awful.spawn "picom -b --experimental-backends"
 awful.spawn "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 awful.spawn "xfce4-power-manager"
+awful.spawn "pasystray"
 awful.spawn "nm-applet"
-awful.spawn.with_shell("feh --bg-fill $HOME/wallpaper/treesunset.png")
+--awful.spawn.with_shell("feh --bg-fill $HOME/wallpaper/treesunset.png")
