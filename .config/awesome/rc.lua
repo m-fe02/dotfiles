@@ -65,11 +65,11 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.tile,
-    awful.layout.suit.floating,
     awful.layout.suit.tile.left,
+    awful.layout.suit.max,
+    awful.layout.suit.floating,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
-    awful.layout.suit.max,
 }
 -- }}}
 
@@ -303,13 +303,18 @@ globalkeys = gears.table.join(
 
     -- Rofi
     awful.key({ modkey },            "d",     function ()
-        awful.util.spawn("rofi -show run") end, 
-              {description = "rofi", group = "launcher"}),
+        awful.util.spawn("dmenu_run -nb '#222222' -sf '#eeeeee' -sb '#008ce3' -nf '#bbbbbb'") end, 
+              {description = "dmenu", group = "launcher"}),
 
     -- Browser
     awful.key({ modkey },            "b",     function ()
         awful.util.spawn("brave") end, 
               {description = "brave", group = "Browser"}),
+
+    -- Mirror Phone Screen
+    awful.key({ modkey, "Control" }, "p",    function ()
+	    awful.util.spawn("scrcpy --turn-screen-off") end,
+	    	  {description = "scrcpy", group = "Phone"}),
 
     awful.key({ modkey }, "x",
               function ()
@@ -461,6 +466,7 @@ awful.rules.rules = {
           "pinentry",
         },
         class = {
+	  "scrcpy",
 	  "zoom",
           "Arandr",
           "Blueman-manager",
@@ -556,8 +562,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Enable gaps
-beautiful.useless_gap = 3
-beautiful.gap_single_client = true
+-- beautiful.useless_gap = 3
+-- beautiful.gap_single_client = true
 
 -- Autostart Applications
 awful.spawn "picom -b --experimental-backends"
