@@ -4,7 +4,7 @@
     "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
+    "spacing": 0, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
@@ -54,13 +54,13 @@
     "hyprland/submap": {
         "format": "<span style=\"italic\">{}</span>"
     },
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
-    },
+    // "sway/scratchpad": {
+    //     "format": "{icon} {count}",
+    //     "show-empty": false,
+    //     "format-icons": ["", ""],
+    //     "tooltip": true,
+    //     "tooltip-format": "{app}: {title}"
+    // },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
         "format-disconnected": "Disconnected ",
@@ -107,7 +107,7 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
+        "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞"]
     },
     "battery": {
         "states": {
@@ -186,8 +186,7 @@
         "menu-actions": {
             "shutdown": "shutdown",
             "reboot": "reboot",
-            "suspend": "systemctl suspend",
-            "hibernate": "systemctl hibernate"
+            "suspend": "systemctl suspend"
         }
     }
 }
