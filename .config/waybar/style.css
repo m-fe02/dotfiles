@@ -1,6 +1,6 @@
 * {
-    font-family: 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
-    font-size: 13px;
+    font-family: 'Ubuntu Nerd Font', 'JetBrainsMono Nerd Font';
+    font-size: 14px;
 }
 
 window#waybar {
@@ -45,7 +45,7 @@ button:hover {
 }
 
 #pulseaudio:hover {
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.75);
     color: #ffffff;
 }
 
@@ -82,7 +82,7 @@ button:hover {
 #clock,
 #tray,
 #custom-power {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: inherit; /* Match the bar's overall transparency */
     color: #ffffff;
     padding: 0 10px;
     border: none;
@@ -92,7 +92,7 @@ button:hover {
 #battery:hover,
 #pulseaudio:hover,
 #network:hover {
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.75);
     color: #ffffff;
 }
 
@@ -122,7 +122,7 @@ button:hover {
 #power-profiles-daemon.performance,
 #power-profiles-daemon.balanced,
 #power-profiles-daemon.power-saver {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: transparent; /* Match the bar's overall transparency */
     color: #ffffff;
 }
 
@@ -131,7 +131,7 @@ button:hover {
 }
 
 #tray {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: inherit; /* Match the bar's overall transparency */
     color: #ffffff;
 }
 
@@ -145,10 +145,10 @@ button:hover {
     color: #ffffff;
 }
 
-#idle_inhibitor.activated {
+/*#idle_inhibitor.activated {
     background-color: #ecf0f1;
     color: #2d3436;
-}
+} */
 
 #mpd {
     background-color: #66cc99;
