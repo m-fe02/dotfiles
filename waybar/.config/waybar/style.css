@@ -14,16 +14,6 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
 button {
     box-shadow: inset 0 -3px transparent;
     border: none;
@@ -32,7 +22,7 @@ button {
 
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
+    box-shadow: inset 0 -3px #444444;
 }
 
 #pulseaudio:hover {
@@ -47,9 +37,9 @@ button:hover {
 }
 
 #workspaces button:hover {
-    background: rgba(0, 255, 153, 0.93);
+    background: rgba(122, 53, 172, 1);
     border-radius: 5px;
-    color: #444444;
+    color: #ffffff;
 }
 
 #workspaces button.active {
@@ -90,20 +80,27 @@ button:hover {
 #power-profiles-daemon:hover,
 #backlight:hover,
 #tray:hover {
-    background-color: rgba(0, 255, 153, 0.93);
+    background-color: rgba(122, 53, 172, 1);
     border-radius: 5px;
-    color: #444444;
+    color: #ffffff;
+}
+
+#battery.charging:hover,
+#battery.plugged:hover {
+    background-color: rgba(122, 53, 172, 1);
+    border-radius: 5px;
+    color: #ffffff;
 }
 
 #battery.charging,
 #battery.plugged {
     background-color: rgba(33, 204, 255, 1);
-    color: #ffffff;
+    color: #444444;
 }
 
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
-    color: #ffffff;
+    color: #444444;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -130,7 +127,7 @@ button:hover {
 }
 
 /*#tray {
-    background-color: rgba(0, 255, 153, 0.93);
+    background-color: rgba(122, 53, 172, 1);
     border-radius: 5px;
     color: #444444;
 }*/
