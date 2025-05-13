@@ -14,16 +14,6 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
 button {
     box-shadow: inset 0 -3px transparent;
     border: none;
@@ -32,7 +22,7 @@ button {
 
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
+    box-shadow: inset 0 -3px #444444;
 }
 
 #pulseaudio:hover {
@@ -47,12 +37,14 @@ button:hover {
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(122, 53, 172, 1);
+    border-radius: 5px;
+    color: #ffffff;
 }
 
 #workspaces button.active {
     background-color: rgba(33, 204, 255, 1);
-    color: #000000;
+    color: #444444;
     border-radius: 5px;
     font-size: 10px;
 }
@@ -75,28 +67,40 @@ button:hover {
 #clock,
 #tray {
     background-color: rgba(33, 204, 255, 1);
-    color: #000000;
+    color: #444444;
     padding: 0 10px;
     border-radius: 5px;
 }
 
+#idle_inhibitor:hover,
 #clock:hover,
 #battery:hover,
 #pulseaudio:hover,
-#network:hover {
-    background-color: rgba(0, 0, 0, 0.75);
+#network:hover,
+#power-profiles-daemon:hover,
+#backlight:hover,
+#tray:hover {
+    background-color: rgba(122, 53, 172, 1);
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+#battery.charging:hover,
+#battery.plugged:hover {
+    background-color: rgba(122, 53, 172, 1);
+    border-radius: 5px;
     color: #ffffff;
 }
 
 #battery.charging,
 #battery.plugged {
-    background-color: rgba(0, 0, 0, 0.75);
-    color: #ffffff;
+    background-color: rgba(33, 204, 255, 1);
+    color: #444444;
 }
 
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
-    color: #ffffff;
+    color: #444444;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -107,7 +111,7 @@ button:hover {
 @keyframes blink {
     to {
         background-color: #ffffff;
-        color: #000000;
+        color: #444444;
     }
 }
 
@@ -115,7 +119,7 @@ button:hover {
 #power-profiles-daemon.balanced,
 #power-profiles-daemon.power-saver {
     background-color: rgba(33, 204, 255, 1);
-    color: #000000;
+    color: #444444;
 }
 
 #network.disconnected {
@@ -123,8 +127,9 @@ button:hover {
 }
 
 /*#tray {
-    background-color: inherit;
-    color: #ffffff;
+    background-color: rgba(122, 53, 172, 1);
+    border-radius: 5px;
+    color: #444444;
 }*/
 
 #tray>.passive {
