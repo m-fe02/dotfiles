@@ -36,8 +36,8 @@ set $menu wofi --show drun
 output * bg /home/mrust/Pictures/Wallpapers/fortune_nebula.jpg fill
 
 ### Window Borders
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 3
+default_floating_border pixel 3
 ### Window Border Color
 client.focused #0a0b16 #2f343f #4477ff #21ccff #4477ff
 client.focused_inactive #2f343f #2f343f #d8dee8 #2f343f #2f343f
