@@ -63,6 +63,10 @@ input {
     focus-follows-mouse max-scroll-amount="0%"
 }
 
+switch-events {
+    lid-close { spawn "bash" "-c" "swaylock"; }
+}
+
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".
@@ -363,7 +367,7 @@ binds {
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
-    Mod+O repeat=false { toggle-overview; }
+    Mod+Space repeat=false { toggle-overview; }
 
     Mod+Q { close-window; }
 
