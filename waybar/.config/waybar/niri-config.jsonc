@@ -7,7 +7,8 @@
     "spacing": 10, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "niri/workspaces"
+        "niri/workspaces",
+	"wlr/taskbar"
     ],
 /*    "modules-center": [
         "niri/window"
@@ -32,6 +33,9 @@
             "locked": "",
             "unlocked": ""
         }
+    },
+    "wlr/taskbar": {
+	"tooltip-format": "{title} | {app_id}"
     },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
