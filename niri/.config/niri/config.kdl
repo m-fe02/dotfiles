@@ -317,7 +317,7 @@ window-rule {
 window-rule {
     match is-active=false
 
-    opacity 0.95
+    opacity 0.98
 }
 
 // Example: enable rounded corners for all windows.
