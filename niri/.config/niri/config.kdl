@@ -259,7 +259,7 @@ spawn-at-startup "/usr/lib/pam_kwallet_init"
 spawn-at-startup "dunst"
 
 environment {
-    DISPLAY ":1"
+    DISPLAY ":0"
 }
 
 
