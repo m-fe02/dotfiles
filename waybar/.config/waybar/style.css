@@ -70,7 +70,8 @@ button:hover {
 #backlight,
 #battery,
 #clock,
-#tray {
+#tray ,
+#custom-wvkbd_toggle {
     background-color: rgba(68, 119, 255, 1);
     color: #444444;
     padding: 0 10px;
