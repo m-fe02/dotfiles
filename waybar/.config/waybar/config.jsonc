@@ -15,7 +15,6 @@
     ],*/
     "modules-right": [
         "idle_inhibitor",
-	"custom/wvkbd_toggle",
         "cpu",
         "memory",
         "temperature",
@@ -170,22 +169,5 @@
             ]
         },
         "on-click": "pavucontrol"
-    },
-	"custom/wvkbd_toggle": {
-        "format": "",
-	"format-alt": "󰌏",
-        "on-click": "~/.local/bin/toggle_wvkbd.sh",
-        "on-click-right": "~/.local/bin/toggle_wvkbd.sh" // Optional: makes right-click do the same
     }
-    // "custom/power": {
-    //     "format": "⏻ ",
-    //     "tooltip": false,
-    //     "menu": "on-click",
-    //     "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-    //     "menu-actions": {
-    //         "shutdown": "shutdown",
-    //         "reboot": "reboot",
-    //         "suspend": "systemctl suspend"
-    //     }
-    // }
 }
