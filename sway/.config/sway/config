@@ -5,18 +5,10 @@ exec waybar -c ~/.config/waybar/sway-config.jsonc
 exec nm-applet
 exec blueman-applet
 
-### Workspace to Monitor
-
-workspace 1 output DP-8
-workspace 2 output DP-8
-workspace 3 output DP-8
-workspace 4 output DP-8
-workspace 5 output DP-8
-workspace 6 output DP-8
-workspace 7 output DP-8
-workspace 8 output DP-8
-workspace 9 output DP-8
-workspace 10 output DP-11
+exec_always {
+    gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
+    gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
+}
 
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
@@ -28,23 +20,23 @@ set $right l
 # Your preferred terminal emulator
 set $term ghostty
 # Your preferred application launcher
-set $menu wofi --show drun
+set $menu rofi -show drun
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/mrust/Pictures/Wallpapers/fortune_nebula.jpg fill
+output * bg /home/fe02/Pictures/Wallpapers/fortune_nebula.jpg fill
 
 ### Window Borders
 default_border pixel 3
 default_floating_border pixel 3
-### Window Border Color
-client.focused #0a0b16 #2f343f #4477ff #21ccff #4477ff
-client.focused_inactive #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.unfocused #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.urgent #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.placeholder #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.background #2f343f
+
+client.focused           #E2001A #E2001A #FFFFFF #E2001A #E2001A
+client.focused_inactive  #333333 #333333 #D8DEE8 #333333 #333333
+client.unfocused         #222222 #222222 #888888 #222222 #222222
+client.urgent            #A80013 #A80013 #FFFFFF #A80013 #A80013
+client.placeholder       #222222 #222222 #D8DEE8 #222222 #222222
+client.background        #1A1A1A
 
 ### Window Gaps
 gaps inner 6
@@ -67,7 +59,7 @@ exec swayidle -w \
 #
 # Example configuration:
 #
-input "1267:12811:ELAN0683:00_04F3:320B_Touchpad" {
+input "1267:32:Elan_Touchpad" {
     dwt enabled
     tap enabled
     natural_scroll disabled
@@ -101,7 +93,7 @@ input "1267:12811:ELAN0683:00_04F3:320B_Touchpad" {
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'Oh, you are leaving me huh? Smell you later...' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
